@@ -1,25 +1,91 @@
+<section class="container">
+  <header>Registration Form</header>
 
-<div class="container"> 
-<form (ngSubmit)="onSubmit()" #emailForm="ngForm">
-  <div class="field">
-    <label class="label">Enter Email</label>
-    <input class="input" type="email" required name="email" [(ngModel)]="email" #emailControl="ngModel"
-      [ngClass]="{ 'is-danger': emailControl.invalid && emailControl.touched}">
+  <form class="form">
+    <div class="column">
+      <div class="input-box">
+        <input type="text" placeholder="First Name" />
+      </div>
 
-    <ng-container *ngIf="emailControl.invalid && emailControl.touched">
-    </ng-container>
-    
-  </div>
+      <div class="input-box">
+        <input type="text" placeholder="Last Name" />
+      </div>
+    </div>
 
-  <div>
-    Is form valid: {{emailForm.valid}}
-  </div>
-  <div>
-    Form values:
-  </div>
-  <button class="button is-primary">SUBMIT</button>
-</form>
-</div>
+    <div class="input-box">
+      <input type="text" placeholder="Email" />
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <input type="number" placeholder="Phone Number" />
+      </div>
+      <div class="input-box">
+        <input type="date" placeholder="Date of Birth" />
+      </div>
+    </div>
+
+    <div class="input-box">
+      <input type="text" placeholder="username" />
+      <button class="btn-gen-username">
+        Create a Username
+      </button>
+    </div>
+
+    <div class="gender-box">
+      <h3>Gender</h3>
+      <div class="gender-option">
+        <div class="gender">
+          <input type="radio" id="check-male" name="gender" checked />
+          <label for="check-male">male</label>
+        </div>
+        <div class="gender">
+          <input type="radio" id="check-female" name="gender" />
+          <label for="check-female">Female</label>
+        </div>
+        <div class="gender">
+          <input type="radio" id="check-other" name="gender" />
+          <label for="check-other">prefer not to say</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-box address">
+      <label>Address</label>
+      <input type="text" placeholder="Street address" />
+      <input type="text" placeholder="Street address line 2" />
+      <div class="column">
+        <div class="select-box">
+          <select name="country">
+            <option hidden>Country</option>
+            <option>United States</option>
+            <option>Italy</option>
+            <option>Ireland</option>
+            <option>Mexico</option>
+            <option>Australia</option>
+          </select>
+        </div>
+        <input type="text" placeholder="City" />
+      </div>
+      <div class="column">
+        <input type="text" placeholder="Region" />
+        <input type="number" placeholder="Postal code" />
+      </div>
+    </div>
+    <input type="button" value="Submit" class="submit-btn">
+  </form>
+</section>
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- ngModel is a directive.
 tells Angular that we want to keep track of the value inside this input.
