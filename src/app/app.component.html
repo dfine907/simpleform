@@ -1,3 +1,26 @@
-<form>
-  <input type="text">
+<form  #emailForm="ngForm">
+  <input type="email" 
+  required name="email" 
+  [(ngModel)]="email" 
+  #emailControl="ngModel">
 </form>
+
+<ng-container *ngIf="emailControl.invalid && emailControl.touched">
+</ng-container>
+
+
+<div>
+  Is form valid: {{emailForm.valid}}
+</div>
+<div>
+  Form values: {{emailForm.value | json}}
+</div>
+<button>SUBMIT</button>
+
+
+<!-- this ngModel is a directive.
+It tells Angular that we want to keep track of the value inside this input.
+We want to keep track of whatever's inside there.
+And anytime it changes, we want to update the 
+property of email on our component class. 
+We need to go into the .ts file and add the logic-->
