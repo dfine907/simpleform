@@ -1,7 +1,7 @@
 <section class="container">
   <header>Registration Form</header>
 
-  <form class="form">
+  <form class="form" (ngSubmit)="OnFormSubmitted(registrationForm)" #registrationForm>
     <div class="column">
       <div class="input-box">
         <input type="text" placeholder="First Name" />
@@ -72,19 +72,15 @@
         <input type="number" placeholder="Postal code" />
       </div>
     </div>
-    <input type="button" value="Submit" class="submit-btn">
+    <input type="submit" value="Submit" class="submit-btn">
   </form>
 </section>
 
 
-
-
-
-
-
-
-
-
+<!-- <input type="submit" value="Submit" class="submit-btn"> when 
+form is submitted it will emit an ng directive.  It will be bound to the form, 
+placed above: ngSubmit. 
+We created OnFormSubmitted method and put in Class-->
 
 
 <!-- ngModel is a directive.

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  OnFormSubmitted(form: HTMLFormElement) {
+
+    console.log(form);
+    
+  }
+
 }
